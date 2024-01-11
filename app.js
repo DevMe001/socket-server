@@ -5,7 +5,7 @@ const WebSocket = require('ws');
 const app = express();
 const httpServer = http.createServer(app);
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 const wsServer = new WebSocket.Server({ server: httpServer });
 
@@ -47,17 +47,13 @@ wsServer.on('connection', (ws) => {
 });
 
 
-// HTTP stuff
-// app.get('/share', (req, res) => res.sendFile(path.resolve(__dirname, './screenshare.html')));
-// app.get('/streamer', (req, res) => res.sendFile(path.resolve(__dirname, './streamer.html')));
-// app.get('/screenview', (req, res) => res.sendFile(path.resolve(__dirname, './receiver.html')));
-// app.get('/viewer', (req, res) => res.sendFile(path.resolve(__dirname, './viewer.html')));
-// app.get('/', (req, res) => {
-// 	res.send(`
-//         <a href="streamer">Streamer</a><br>
-//         <a href="client">Client</a>
-//     `);
-// });
+
+app.get('/', (req, res) => {
+	res.send(`
+        <a>Socket homepage</a><br>
+        <a href="client">Connected to websocke server</a>
+    `);
+});
 httpServer.listen(PORT, () => console.log(`HTTP server listening at http://localhost:${PORT}`));
 
 
