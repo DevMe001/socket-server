@@ -1,0 +1,14 @@
+{
+  "name": "websocket-media-streaming",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "http": "^0.0.1-security",
+    "nodemon": "^3.0.2",
+    "ws": "^8.13.0"
+  }
+}
